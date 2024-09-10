@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Navigation Menu</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: aqua;
+        }
+
+        .fixed-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: rgb(212, 238, 12);
+            z-index: 1000;
+        }
+
+        .fixed-nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            margin: 0;
+            padding: 1rem 0;
+        }
+
+        .fixed-nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .fixed-nav ul li a:hover {
+            background-color: #1c09ad;
+        }
+
+        .scrolled {
+            background-color: #6a11e6;
+        }
+
+        section {
+            height: 100vh;
+            padding: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="fixed-nav">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h1>Home Section</h1>
+        <p>My name is vikas i am student of nit delhi</p>
+    </section>
+
+    <section id="about">
+        <h1>About Section</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique ad iste, dolorem eaque voluptatem
+            doloribus repellat sunt veniam voluptas, totam veritatis dolorum vel!</p>
+    </section>
+
+    <section id="services">
+        <h1>Services Section</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis explicabo impedit temporibus odio numquam
+            nobis totam dignissimos, ut praesentium harum.</p>
+    </section>
+
+    <section id="contact">
+        <h1>Contact Section</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut veritatis autem possimus eaque itaque corporis
+            aperiam iure consequuntur eius numquam totam, ratione architecto explicabo sed a quia pariatur quos
+            praesentium!</p>
+    </section>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            const nav = document.querySelector('.fixed-nav');
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+
+</body>
+
+</html>
